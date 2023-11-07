@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
     <header class="bg-danger p-3">
         <h1 class="text-center text-white">Bienvenido</h1>
@@ -16,21 +17,22 @@
         <ol>
             <li>Si desea poner condicionales hagalo de esta manera: =>.</li>
             <li>Si desea poner condicionales de si y solo si hagalo de esta manera: <=>.</li>
-            <li>Si desea poner una conjuncion 'y' solo escriba: Y</li>
-            <li>Si desea poner una disyunción 'o' solo escriba: O</li>
-            <li>Si desea poner una negación solo escriba: no. antes de su variable.</li>
+            <li>Si desea poner una conjuncion 'y' solo escriba: &</li>
+            <li>Si desea poner una disyunción 'o' solo escriba: ||</li>
+            <li>Si desea poner una negación solo escriba: - antes de su variable.</li>
         </ol>
     </section>
     <section class="d-flex justify-content-center mt-4">
-        <input type="text" class="form-control" placeholder="Escribe tu ejercicio" style="width: 30%;"/>
-        <input type="number" class="form-control text-center variables" placeholder="¿Cuántas variables tienes?" 
-        style="width: 20%;" title="Escribe la cantidad de variables que usas en tu ejercicio"/>
+        <input type="text" class="form-control" placeholder="Escribe tu ejercicio" style="width: 30%;" />
+        <input type="number" class="form-control text-center variables" placeholder="¿Cuántas variables tienes?"
+            style="width: 20%;" title="Escribe la cantidad de variables que usas en tu ejercicio" />
     </section>
     <section class="d-flex justify-content-center mt-4">
         <button class="btn btn-primary resultBtn">Calcular</button>
     </section>
     <section class="text-center warning text-danger mt-3 p-2"></section>
-    <table class="table"></table>
+    <table class="table text-center"></table>
     <script src="./app.js"></script>
 </body>
+
 </html>
