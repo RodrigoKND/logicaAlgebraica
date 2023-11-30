@@ -69,13 +69,13 @@ const controlOperations = (inputValue) => {
         const firstElement = split[0].toString();
         for (let i = 0; i < firstElement.length; i++) {
             if (firstElement[i] === "=" && firstElement[i + 1] === ">") {
-                variablesHeader.push(firstElement[i-1] + "➼" + firstElement[i+2]);
+                variablesHeader.push(firstElement[i - 1] + "➼" + firstElement[i + 2]);
             } else if (firstElement[i] === "&") {
-                variablesHeader.push(firstElement[i-1] + "&" + firstElement[i+1]);
+                variablesHeader.push(firstElement[i - 1] + "&" + firstElement[i + 1]);
             } else if (firstElement[i] === "||") {
-                variablesHeader.push(firstElement[i-1] + "||" + firstElement[i+1]);
+                variablesHeader.push(firstElement[i - 1] + "||" + firstElement[i + 1]);
             } else if (firstElement[i] === "<" && firstElement[i + 1] === "=" && firstElement[i + 2] === ">") {
-                variablesHeader.push(firstElement[i-1] + "↹" + firstElement[i+3]);
+                variablesHeader.push(firstElement[i - 1] + "↹" + firstElement[i + 3]);
             } else if (firstElement[i] === "-") {
                 const div = document.createElement("div");
                 div.classList.add("text-danger", "text-center");
@@ -105,10 +105,10 @@ const createTable = () => {
     //Segundo for son las columnas
     const tBody = document.createElement("tBody");
     const trBody = document.createElement("tr");
-    for (let j = 0; j < quantityVariables; j++){
+    for (let j = 0; j < quantityVariables; j++) {
         const td = document.createElement("td");
         const input = document.createElement("input");
-        
+
         input.readOnly = true;
         td.appendChild(input);
         trBody.appendChild(td);
