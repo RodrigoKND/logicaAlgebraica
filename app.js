@@ -110,42 +110,46 @@ const variablesSeem = (arrayLogic, input, numberElements, column, middle) => {
         }
     })
 }
-const getNextElement = (arrayOperation)=>{
+const getNextElement = (arrayOperation) => {
     const lengthUnitary = varUnitary.length;
-    for(let i = lengthUnitary; i < variablesHeader.length; i++){
-        for(let j = 0; j < arrayOperation.length; j++){
-            if(variablesHeader[i].includes(arrayOperation[j] )){
+    for (let i = lengthUnitary; i < variablesHeader.length; i++) {
+        for (let j = 0; j < arrayOperation.length; j++) {
+            if (variablesHeader[i].includes(arrayOperation[j])) {
                 const value = arrayOperation[j];
                 operationResult(value);
-            }   
+            }
         }
     }
 }
-const operationResult = (value)=>{
+const operationResult = (arrayOperation) => {
     const input = getElement("td input", 2);
     let valuesLogic = [];
     let elementsNoClass = [];
-    input.forEach(element=>{
-        if(element.classList.contains("trusty") || element.classList.contains("falsy")) valuesLogic.push(element.value);
+    input.forEach(element => {
+        if (element.classList.contains("trusty") || element.classList.contains("falsy")) valuesLogic.push(element.value);
         else elementsNoClass.push(element);
     })
-    //[V V V V F F F F V V V V F F F F V V V V F F F F]
-    
-    console.log(valuesLogic.slice(valuesLogic.length/2));
-    for(let i = 0; i < valuesLogic.length; i+=4){
-        // for(let j = 1; j < trusty.length; j+= 2){
-        //     if(value.includes("&")){
-        //         if(trusty[i] === "V" && trusty[j] === "V"){
-        //             elementsNoClass.forEach(element=>{
-        //                 element.value = "V";
-        //             })
-        //         }else{
-        //             elementsNoClass.forEach(element=>{
-        //                 element.value = "F";
-        //             })
-        //         }
-        //     }
-        // }
+
+    //valuesLogic contiene los valores de verdadero y falso
+    // [V V F F V V F F] = 8
+
+    for (let i = 0; i < valuesLogic.length / 2; i++) {
+        const valueArray = valuesLogic[i];
+        const increaseNextValue = valuesLogic[i + 4];
+        if (arrayOperation.includes("&")) {
+            console.log(valueArray==="V")
+            console.log(increaseNextValue === "V")
+
+            if (valueArray === "V" && increaseNextValue === "V") {
+                elementsNoClass.forEach(element => {
+                    element.value = "V";
+                })
+            } else {
+                elementsNoClass.forEach(element => {
+                    element.value = "F";
+                })
+            }
+        }
     }
 }
 
