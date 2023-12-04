@@ -2,6 +2,7 @@ import { getElement } from "../funcionesGenerales.js";
 
 getElement(".exit", 1).addEventListener("click", () => {
     getElement(".manual", 1).style.display = "none";
+    getElement(".seeman", 1).classList.add("showBtnMan");
 })
 getElement(".seeman", 1).addEventListener("click", () => {
     getElement(".manual", 1).style.display = "block";
