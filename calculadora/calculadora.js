@@ -11,7 +11,10 @@ getElement(".seeman", 1).addEventListener("click", () => {
 let valueInput;
 getElement(".resultBtn").addEventListener("click", e => {
     valueInput = getElement(".functions", 1).value;
-    if (valueInput > 1 && valueInput <= 3) createTable(Number(valueInput));
+    if (valueInput > 1 && valueInput <= 3) {
+        createTable(Number(valueInput));
+        getElement(".resultBtn").setAttribute("disabled", "true")
+    }
     else alert("Lo siento, por ahora se realiza hasta 3 x 3")
 })
 
@@ -279,11 +282,7 @@ const betweenTwoColumns = (valueClick, valueResponse) => {
     if (countFOrigin > 0 && countV > 2) {
         const middleColumn = Math.pow(2, valueInput) / 2;
         for (let i = 0; i < inputs.length; i++) {
-            console.log(Number(inputs[i].getAttribute("col")) === Number(col) + 1)
-            // console.log(Number(inputs[i].getAttribute("col")) + 1 === indexElement + 1 )
-            // console.log(indexElement)
             if (Number(inputs[i].getAttribute("col")) === Number(col) + 1 && Number(inputs[i].getAttribute("row")) >= middleColumn) {
-                // console.log(inputs[i].value)
                 inputs[i].value = "F";
             }
         }
